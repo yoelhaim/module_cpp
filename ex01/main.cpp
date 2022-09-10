@@ -6,11 +6,12 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:52:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/10 21:15:04 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/11 00:30:26 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "Phonebook.hpp"
 
 void Contact::printErrorMessage(std::string str, std::string msg)
 {
@@ -21,7 +22,10 @@ void Contact::printErrorMessage(std::string str, std::string msg)
 int main(void)
 {
 	Contact contacts;
+	PhoneBook phone;
+	
 	std::string line;
+	int s;
 
 	
 	while (std::getline(std::cin, line))
@@ -53,19 +57,17 @@ int main(void)
 			contacts.setSecret(line); // add  secret code
 			if (line.empty()) // check line is empty
 				continue;
+			phone.addContact(contacts.getFirstName(),  contacts.getLastName(), contacts.getNickName(), contacts.getPhone(),contacts.getSecret());
 			PRINT << "Succefully add new Contact :" << contacts.getNickName() << std::endl;
 			
 			}
+			if(line == "SEARCH")
+				phone.getContact(0);
 			if (line == "EXIT")
 				break;
-				PRINT <<"---------------\n" << contacts.getFirstName()<< std::endl;
-				PRINT << contacts.getLastName()<< std::endl;
-				PRINT << contacts.getPhone()<< std::endl;
-				PRINT << contacts.getNickName()<< std::endl;
-				PRINT << contacts.getSecret()<< std::endl;
-				PRINT <<"---------------\n";
-			
+				// PRINT << contacts.getFirstName();
 		}
-		// PRINT << contacts.getFirstName();
+	
+	
 		
 }
