@@ -2,31 +2,34 @@
 
 #include <iostream>
 #include <cstring>
-#define PRINT std::cout 
+#define PRINT std::cout
+#define STR std::string 
 
 class Contact
 {
 	private:
-		std::string firstName;
-		std::string lastName;
-		std::string phoneNumber;
-		std::string darksetSecret;
-		std::string nickName;
+		STR firstName;
+		STR lastName;
+		STR phoneNumber;
+		STR darksetSecret;
+		STR nickName;
 	public:
+		Contact();
+		Contact(STR firstName, STR lastName, STR nickName, STR phoneNumber, STR darksetSecret);
 		// first Name
-		std::string getFirstName();
-		void setFirstName(std::string firstName);
+		STR getFirstName();
+		void setFirstName(STR firstName);
 		// last Name
-		std::string getLastName();
-		void setLastName(std::string lastName);
+		STR getLastName();
+		void setLastName(STR lastName);
 		// phone number
-		std::string getPhone();
-		void setPhone(std::string phoneNumber);
+		STR getPhone();
+		void setPhone(STR phoneNumber);
 		// nick Name
-		std::string getNickName();
-		void setNickName(std::string nickName);
+		STR getNickName();
+		void setNickName(STR nickName);
 		// codesecret
-		std::string getSecret();
-		void setSecret(std::string darksetSecret);
-		void printErrorMessage(std::string str, std::string msg);
+		STR getSecret();
+		void setSecret(STR darksetSecret);
+		void printErrorMessage(STR str, STR msg);
 };
