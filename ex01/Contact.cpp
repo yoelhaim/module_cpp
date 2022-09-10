@@ -17,7 +17,24 @@ std::string Contact::getLastName()
 {
 	return this->lastName;
 }
+Contact::Contact()
+{
+	this->firstName = "";
+	this->lastName = "";
+	this->nickName = "";
+	this->phoneNumber = "";
+	this->darksetSecret = "";
 
+}
+Contact::Contact(STR firstName, STR lastName, STR nickName, STR phoneNumber, STR darksetSecret)
+{
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->nickName = nickName;
+	this->phoneNumber = phoneNumber;
+	this->darksetSecret = darksetSecret;
+
+}
 void Contact::setLastName(std::string lastName)
 {
 	printErrorMessage(lastName, "lastname");
