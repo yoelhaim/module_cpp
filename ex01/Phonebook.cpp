@@ -1,29 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/11 13:27:03 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/11 21:43:01 by yoelhaim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 #include "Contact.hpp"
 
+PhoneBook::PhoneBook()
+{
+	this->numberOfContact = 0;
+}
 
 void PhoneBook::addContact(STR firstName, STR lastName, STR nickName, STR phoneNumber, STR darksetSecret)
 {
 	static int id = 0;
-	Contact contact(firstName,lastName, nickName, phoneNumber , darksetSecret);
+	Contact contact = Contact(firstName,lastName, nickName, phoneNumber , darksetSecret);
 	this->contacts[id++] = contact;
+	if (this->numberOfContact < 8)
+		this->numberOfContact++;
 	if (id == 8)
 		id = 0;
-
+}
+STR lenghtOfStr(STR str)
+{
+	if (str.length() > 10)
+		return (str.substr(0, 10) +".");
+	return (str);
 }
 
-void PhoneBook::getContact(int id)
+void PhoneBook::searchContact(int id ,int type)
 {
-	if (id < 0 && id > 8)
+		if (id >= this->numberOfContact || id < 0)
 	{
 		PRINT << "out in of the range\n";
 		return ;
 	}
-	for (size_t i = 0; i < 8; i++)
+	Contact contact = this->contacts[id];
+	if (type == 1) // get all contact sep  by |
 	{
-	Contact contact = this->contacts[i];
+	PRINT << "index : " << id << "|";
+	PRINT << "firstname : "   << lenghtOfStr(contact.getFirstName()) << "|";
+	PRINT << "lastname : "  << contact.getLastName() << "|";
+	PRINT << "nicktname : "  << contact.getNickName() << std::endl;
+	}
+	else // if you search by id 
+	{	
+	PRINT << "\x1B[33m"<< "-----------------------------\n"<< "\x1B[0m";
+	PRINT << "\x1B[35m" <<"information : " << contact.getNickName() << "\x1B[0m\n\n";
+	PRINT << "index        : " <<  id << std::endl;
+	PRINT << "firstname    : " << contact.getFirstName() << std::endl;
+	PRINT << "lastname     : " <<  contact.getLastName() << std::endl;
+	PRINT << "nicktname    : " <<  contact.getNickName() << std::endl;
+	PRINT << "phone number : " <<  contact.getPhone() << std::endl;
+	PRINT << "code secret : " <<  contact.getSecret() << std::endl;
+	PRINT << "\x1B[33m"<< "-----------------------------\n"<< "\x1B[0m";
+	}
+}
 
-	PRINT << ">>>>>"  << i << " => ";PRINT << contact.getFirstName() << std::endl;
+void PhoneBook::getContact()
+{
+	int  id;
+	for (size_t i = 0; i < this->numberOfContact; i++)
+		searchContact(i, 1);
+	if (this->numberOfContact != 0)
+	{
+	PRINT << "typed id here : ";
+	std::cin  >>  id;
+	searchContact(id, 0);	
 	}
 
 }
