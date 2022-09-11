@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:52:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/11 00:30:26 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/11 21:37:28 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void Contact::printErrorMessage(std::string str, std::string msg)
 {
-	if(str.empty())
-		PRINT << msg << " is required ! try again" << std::endl;
+	if(str.empty()) // check fiels is not empty if empty return error message and contunie
+		PRINT << "\x1B[31m"<< msg << " is required ! try again" << "\x1B[0m"<< std::endl;
 }
 
 int main(void)
@@ -25,11 +25,9 @@ int main(void)
 	PhoneBook phone;
 	
 	std::string line;
-	int s;
-
-	
-	while (std::getline(std::cin, line))
+	while (std::getline(std::cin, line)) 
 		{
+			// PRINT << "typed commond type :" ;
 			if(line == "ADD")
 			{
 			PRINT << "firstname :" ;
@@ -50,22 +48,22 @@ int main(void)
 			PRINT << "phone number :" ;
 			std::getline(std::cin,line); // input for nember phone 
 			contacts.setPhone(line); // add  phone number
-			if (line.empty()) // check line is empty
-				continue;
+			if (line.empty() || contacts.getPhone().empty()) // check line is empty
+				continue ;
 			PRINT << "secret darkest :" ;
 			std::getline(std::cin,line); // input for secret 
 			contacts.setSecret(line); // add  secret code
 			if (line.empty()) // check line is empty
 				continue;
+			//if not empty all feild add new contact in list
 			phone.addContact(contacts.getFirstName(),  contacts.getLastName(), contacts.getNickName(), contacts.getPhone(),contacts.getSecret());
-			PRINT << "Succefully add new Contact :" << contacts.getNickName() << std::endl;
+			PRINT << "\x1B[32m"<< "Succefully add new Contact :" << contacts.getNickName() << "\x1B[0m"<< std::endl;
 			
 			}
 			if(line == "SEARCH")
-				phone.getContact(0);
-			if (line == "EXIT")
+				phone.getContact();// search all  contact 
+			if (line == "EXIT") // if user typed EXIT exiting  program 
 				break;
-				// PRINT << contacts.getFirstName();
 		}
 	
 	
