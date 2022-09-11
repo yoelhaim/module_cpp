@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/11 13:26:56 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/11 21:27:52 by yoelhaim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 // first name
-std::string Contact::getFirstName()
+STR Contact::getFirstName()
 {
 	return this->firstName;
 }
 
-void Contact::setFirstName(std::string firstName)
+void Contact::setFirstName(STR firstName)
 {
 	printErrorMessage(firstName, "firstname");
 	this->firstName = firstName;
 }
 
 // last name
-std::string Contact::getLastName()
+STR Contact::getLastName()
 {
 	return this->lastName;
 }
@@ -35,43 +47,75 @@ Contact::Contact(STR firstName, STR lastName, STR nickName, STR phoneNumber, STR
 	this->darksetSecret = darksetSecret;
 
 }
-void Contact::setLastName(std::string lastName)
+
+void Contact::setLastName(STR lastName)
 {
 	printErrorMessage(lastName, "lastname");
 	this->lastName = lastName;
 }
 
 // phone nbr
-std::string Contact::getPhone()
+STR Contact::getPhone()
 {
 	return this->phoneNumber;
 }
 
-void Contact::setPhone(std::string phoneNumber)
+int checkValidPhone(STR phoneNumber)
 {
-	printErrorMessage(phoneNumber, "phone number");
-	this->phoneNumber = phoneNumber;
+	if (phoneNumber.length() < 5)
+	{
+		PRINT <<"\x1B[31m"<< "oops number phone is short\n" << "\x1B[0m";
+		return (0);	
+	}
+	else if (phoneNumber.length() > 13)
+	{
+		PRINT<< "\x1B[31m" << "oops number phone is long\n" << "\x1B[0m";
+		return (0);
+	}
+	for (int i ; phoneNumber[i]; i++)
+	{
+		if(isalpha(phoneNumber[i]))
+		{
+			PRINT<<"\x1B[31m"<< "ooops number not valid !\n"<< "\x1B[0m";
+			return (0);
+		}
+	}
+ return (1);
+	
+}
+
+void Contact::setPhone(STR phoneNumber)
+{
+	
+	if (!checkValidPhone(phoneNumber))
+	{
+		phoneNumber = "";
+		printErrorMessage(phoneNumber, "phone number");
+		this->phoneNumber = phoneNumber;
+	}
+	else
+		this->phoneNumber = phoneNumber;
 }
 
 // nickname
-std::string Contact::getNickName()
+STR Contact::getNickName()
 {
 	return this->nickName;
 }
 
-void Contact::setNickName(std::string nickName)
+void Contact::setNickName(STR nickName)
 {
 	printErrorMessage(nickName, "nickname");
 	this->nickName = nickName;
 }
 
 // secet
-std::string Contact::getSecret()
+STR Contact::getSecret()
 {
 	return this->darksetSecret;
 }
 
-void Contact::setSecret(std::string darksetSecret)
+void Contact::setSecret(STR darksetSecret)
 {
 	printErrorMessage(darksetSecret, "secret code");
 	this->darksetSecret = darksetSecret;
