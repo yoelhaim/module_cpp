@@ -14,7 +14,7 @@ class Contact
 		STR darksetSecret;
 		STR nickName;
 	public:
-		Contact();
+		Contact(); // contractor
 		Contact(STR firstName, STR lastName, STR nickName, STR phoneNumber, STR darksetSecret);
 		// first Name
 		STR getFirstName();

@@ -6,11 +6,11 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 13:27:03 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/11 21:43:01 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:02:07 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include "Contact.hpp"
 
 PhoneBook::PhoneBook()
@@ -45,10 +45,11 @@ void PhoneBook::searchContact(int id ,int type)
 	Contact contact = this->contacts[id];
 	if (type == 1) // get all contact sep  by |
 	{
-	PRINT << "index : " << id << "|";
-	PRINT << "firstname : "   << lenghtOfStr(contact.getFirstName()) << "|";
-	PRINT << "lastname : "  << contact.getLastName() << "|";
-	PRINT << "nicktname : "  << contact.getNickName() << std::endl;
+	PRINT << "id  | firstname  |  lastname  | nickname\n";
+	PRINT  << id << "   | ";
+	PRINT  << lenghtOfStr(contact.getFirstName()) << "|";
+	PRINT  << lenghtOfStr(contact.getLastName()) << " |";
+	PRINT  << lenghtOfStr(contact.getNickName()) << std::endl;
 	}
 	else // if you search by id 
 	{	
@@ -67,7 +68,7 @@ void PhoneBook::searchContact(int id ,int type)
 void PhoneBook::getContact()
 {
 	int  id;
-	for (size_t i = 0; i < this->numberOfContact; i++)
+	for (int i = 0; i < this->numberOfContact; i++)
 		searchContact(i, 1);
 	if (this->numberOfContact != 0)
 	{

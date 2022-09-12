@@ -6,12 +6,12 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:52:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/11 21:37:28 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/12 17:48:12 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 void Contact::printErrorMessage(std::string str, std::string msg)
 {
