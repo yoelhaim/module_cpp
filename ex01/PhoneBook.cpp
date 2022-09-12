@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 13:27:03 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/12 18:30:15 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:41:34 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ STR lenghtOfStr(STR str)
 {
 	if (str.length() > 10)
 		return (str.substr(0, 10) +".");
+	for(size_t i = str.length(); i < 10; i++)
+		PRINT << " ";
 	return (str);
 }
 
@@ -45,10 +47,10 @@ void PhoneBook::searchContact(int id ,int type)
 	Contact contact = this->contacts[id];
 	if (type == 1) // get all contact sep  by |
 	{
-	PRINT << "id  | firstname  |  lastname  | nickname\n";
-	PRINT  << id << "   | ";
+	PRINT << "id  | firstname | lastname | nickname\n";
+	PRINT  << id << "   |";
 	PRINT  << lenghtOfStr(contact.getFirstName()) << "|";
-	PRINT  << lenghtOfStr(contact.getLastName()) << " |";
+	PRINT  << lenghtOfStr(contact.getLastName()) << "|";
 	PRINT  << lenghtOfStr(contact.getNickName()) << std::endl;
 	}
 	else // if you search by id 
