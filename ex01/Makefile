@@ -9,8 +9,8 @@ $(NAME): $(OBJ)
 all: $(NAME)
 %.o:%.cpp Contact.hpp PhoneBook.hpp main.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
-# clean :
-# 	$(RM) $(OBJ)
-fclean : 
+clean :
+	$(RM) $(OBJ)
+fclean : clean
 	$(RM) $(NAME)
 re : fclean all
