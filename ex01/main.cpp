@@ -6,18 +6,12 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:52:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/12 17:48:12 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:14:14 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-
-void Contact::printErrorMessage(std::string str, std::string msg)
-{
-	if(str.empty()) // check fiels is not empty if empty return error message and contunie
-		PRINT << "\x1B[31m"<< msg << " is required ! try again" << "\x1B[0m"<< std::endl;
-}
 
 int main(void)
 {

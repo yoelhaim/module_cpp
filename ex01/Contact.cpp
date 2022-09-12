@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 13:26:56 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/12 17:54:06 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:14:21 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,11 @@ int checkValidPhone(STR phoneNumber)
  return (1);
 	
 }
-
+void Contact::printErrorMessage(std::string str, std::string msg)
+{
+	if(str.empty()) // check fiels is not empty if empty return error message and contunie
+		PRINT << "\x1B[31m"<< msg << " is required ! try again" << "\x1B[0m"<< std::endl;
+}
 void Contact::setPhone(STR phoneNumber)
 {
 	
