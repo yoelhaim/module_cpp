@@ -6,12 +6,12 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:52:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/12 18:20:56 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:22:08 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
