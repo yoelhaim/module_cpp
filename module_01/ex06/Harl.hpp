@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 01:55:21 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/23 04:02:12 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/24 20:14:52 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/26 01:13:23 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-int main(void)
+#pragma once
+#include <iostream>
+class Harl
 {
-	Zombie *zombie = newZombie("foo");/// alloceted 
-	zombie->announce(); // printed
-	delete zombie; // free
-	randomChump("bar"); // random
-}
+private:
+	void debug();
+	void info();
+	void warning();
+	void error();
+
+public:
+	Harl();
+	~Harl();
+	void complain(std::string level);
+};

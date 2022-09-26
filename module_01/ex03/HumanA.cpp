@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 13:26:45 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/12 18:29:35 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/17 15:56:49 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/23 00:09:34 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "HumanA.hpp"
 
-#include <iostream>
-#include "Contact.hpp"
-#define PRINT std::cout 
-
-class PhoneBook
+HumanA::HumanA(STR name, Weapon &weopen):weopen(weopen)
 {
-	private :
-		Contact contacts[8];
-		int		numberOfContact;
-	public :
-		PhoneBook();
-		void addContact(STR firstName, STR lastName, STR nickName, STR phoneNumber, STR darksetSecret);
-		void getContact();
-		void searchContact(int id, int type);
-		
+	this->name = name;
+}
 
-};
+HumanA::~HumanA()
+{
+}
+void HumanA::attack()
+{
+	std::cout << this->name << " attak " <<  this->weopen.getType() << std::endl;
+}

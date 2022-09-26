@@ -1,14 +1,14 @@
-NAME = megaphone
+NAME = harl
 RM = rm -rf
-SRC = megaphone.cpp
 CFLAGS = -Wall -Wextra -Werror
+SRC =  main.cpp  Harl.cpp
 CC = c++
 OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
-	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -g
 all: $(NAME)
-%.o:%.cpp megaphone.hpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+%.o:%.cpp  main.cpp  Harl.cpp
+	@$(CC) $(CFLAGS) -c $< -o $@ -g
 clean :
 	$(RM) $(OBJ)
 fclean : clean

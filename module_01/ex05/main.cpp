@@ -5,17 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 01:55:21 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/23 04:02:12 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/24 19:36:34 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/26 01:26:34 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int main(void)
+int main()
 {
-	Zombie *zombie = newZombie("foo");/// alloceted 
-	zombie->announce(); // printed
-	delete zombie; // free
-	randomChump("bar"); // random
+	Harl harl;
+	std::cout << "DEBUG : \n";
+	harl.complain("debug");
+	std::cout << "INFO : \n";
+	harl.complain("info");
+	std::cout << "WARNING : \n";
+	harl.complain("warning");
+	std::cout << "ERROR : \n";
+	harl.complain("error");
+	
 }

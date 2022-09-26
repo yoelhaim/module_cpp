@@ -1,13 +1,13 @@
-NAME = PhoneBook
+NAME = violence
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
-SRC = main.cpp PhoneBook.cpp Contact.cpp
+SRC =  main.cpp  
 CC = c++
 OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
 	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 all: $(NAME)
-%.o:%.cpp Contact.hpp PhoneBook.hpp main.cpp
+%.o:%.cpp  main.cpp  
 	@$(CC) $(CFLAGS) -c $< -o $@
 clean :
 	$(RM) $(OBJ)

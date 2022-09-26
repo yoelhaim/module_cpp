@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 01:55:21 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/23 04:02:12 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/17 15:56:56 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/22 23:54:24 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+#define STR std::string
+#include "Weapon.hpp"
 
-int main(void)
+class HumanB
 {
-	Zombie *zombie = newZombie("foo");/// alloceted 
-	zombie->announce(); // printed
-	delete zombie; // free
-	randomChump("bar"); // random
-}
+private:
+	STR name;
+	Weapon *weopen;
+public:
+	HumanB(STR name);
+	~HumanB();
+	void attack();
+	void setWeapon(Weapon &weapon);
+};

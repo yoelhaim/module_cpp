@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 01:55:21 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/23 04:02:12 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/17 15:55:55 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/22 23:44:43 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-int main(void)
+#pragma once
+#include <iostream>
+#define STR std::string
+
+class Weapon
 {
-	Zombie *zombie = newZombie("foo");/// alloceted 
-	zombie->announce(); // printed
-	delete zombie; // free
-	randomChump("bar"); // random
-}
+private:
+	STR type;
+public:
+	Weapon(STR type);
+	~Weapon();
+	STR& getType();
+	void setType(STR type);
+	
+};

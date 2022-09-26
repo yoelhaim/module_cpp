@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 14:26:16 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/09 23:40:55 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/17 15:54:42 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/23 04:19:11 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int ac , char **av)
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
+int main()
 {
-	if (ac > 1)
 	{
-		for (int i = 1;av[i]; i++)
-		{
-			for(int j = 0;av[i][j]; j++)
-				std::cout << (char) toupper(av[i][j]) ;
-			if(av[i + 1])
-				std::cout<< " "	;
-		}	
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }
