@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:55:45 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/22 23:39:30 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:07:39 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Weapon::Weapon(STR type)
 {
 	this->setType(type);
 }
-
 Weapon::~Weapon()
 {
 }

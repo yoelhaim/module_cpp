@@ -1,16 +1,21 @@
 NAME = Weapon
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror
+HEADER = HumanA.hpp HumanB.hpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC =  main.cpp  HumanA.cpp HumanB.cpp  Weapon.cpp
 CC = c++
 OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
 	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -g
 all: $(NAME)
-%.o:%.cpp  main.cpp  HumanA.cpp HumanB.cpp  Weapon.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@ -g 
+%.o:%.cpp  $(HEADER)
+	@$(CC) $(CFLAGS) -c $< -o $@ -g
+	@echo "successfully compile ... $<"
 clean :
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
+	@echo "successfully removed ..."
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "successfully all removed ..."
 re : fclean all
+.PHONY: re clean fclean all

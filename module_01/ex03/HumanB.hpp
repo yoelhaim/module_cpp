@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:56:56 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/22 23:54:24 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:47:01 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanB
 {
 private:
-	STR name;
+	STR  name;
 	Weapon *weopen;
 public:
 	HumanB(STR name);

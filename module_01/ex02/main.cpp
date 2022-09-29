@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 23:25:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/23 03:33:02 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:16:19 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void)
 	std::string str;
 	str = "HI THIS IS BRAIN";
 	std::string *stringPTR = &str;
-	std::string &stringREF = str;
+	std::string &stringREF = str; 
 
 	std::cout << "• The memory address of the string variable  " << &str << std::endl;
 	std::cout << "• The memory address held by stringPTR.      " << &stringPTR << std::endl;

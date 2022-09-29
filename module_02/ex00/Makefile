@@ -1,13 +1,14 @@
-NAME = violence
+NAME = Fixed
 RM = rm -rf
+HEADER = Fixed.hpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC =  main.cpp  
+SRC = main.cpp Fixed.cpp 
 CC = c++
 OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
-	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -g
 all: $(NAME)
-%.o:%.cpp 
+%.o:%.cpp  $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@ -g
 	@echo "successfully compile ... $<"
 clean :

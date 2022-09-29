@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:56:49 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/23 00:09:34 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:40:02 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ HumanA::~HumanA()
 }
 void HumanA::attack()
 {
-	std::cout << this->name << " attak " <<  this->weopen.getType() << std::endl;
+	std::cout <<  "\x1B[36m"<< this->name <<  "\x1B[0m"<< " attacks with their " <<  "\x1B[31m"<< this->weopen.getType() <<  "\x1B[0m"<< std::endl;
 }

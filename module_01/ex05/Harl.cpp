@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 19:37:10 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/26 01:26:02 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/09/29 21:53:49 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ void Harl::error()
 }
 void Harl::complain(std::string level)
 {
-	typedef void (Harl::*FuncPtr)();
-	(void) level;
-	FuncPtr lvl[4] = {
+	void (Harl::*FuncPtr[4])() = {
 		&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string thisStr[4] = {"debug", "info", "warning", "error"};
 	
@@ -48,11 +46,11 @@ void Harl::complain(std::string level)
 	{
 		if (thisStr[i] == level)
 		{
-			(this->*lvl[i])();
+			(this->*FuncPtr[i])();
 			return ;
 		}
 			
 	}
-	std::cout << "not found (:"<< std::endl;
+	std::cout << "not found );" << level << std::endl;
 	
 }

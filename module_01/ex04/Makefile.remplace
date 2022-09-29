@@ -1,13 +1,13 @@
-NAME = violence
+NAME = Sed
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC =  main.cpp  
+SRC = main
 CC = c++
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:=.o)
 $(NAME): $(OBJ)
-	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -g
 all: $(NAME)
-%.o:%.cpp 
+%.o:% 
 	@$(CC) $(CFLAGS) -c $< -o $@ -g
 	@echo "successfully compile ... $<"
 clean :

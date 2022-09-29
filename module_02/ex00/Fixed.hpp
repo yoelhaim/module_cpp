@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 19:36:34 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/09/29 21:58:06 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/09/29 19:17:21 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/09/29 21:05:43 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include <iostream>
 
-int main()
+class Fixed
 {
-	Harl harl;
-	harl.complain("debug");
-	
-}
+private:
+	int number;
+	static int bits;
+
+public:
+	Fixed();
+	Fixed(const Fixed &t);
+	Fixed &operator=(const Fixed &t);
+	~Fixed();
+	int getRawBits();
+	void setRawBits(int const raw);
+};
