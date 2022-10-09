@@ -6,7 +6,7 @@
 /*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:23:36 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/09 22:03:11 by pro              ###   ########.fr       */
+/*   Updated: 2022/10/09 22:08:46 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {
-	std::cout << "sss  ";
 	return (this->getRawBits());
 }
 
