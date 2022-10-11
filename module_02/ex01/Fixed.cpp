@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:23:36 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/09 22:08:46 by pro              ###   ########.fr       */
+/*   Updated: 2022/10/11 11:30:47 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
+
+
+int calcPow(int a, int b)
+{
+	int result = 1;
+	for (int i = 0; i < b; i++)
+		result*= a;
+	return (result);
+}
+
 
 Fixed::Fixed()
 {
@@ -20,13 +30,14 @@ Fixed::Fixed()
 }
 Fixed::Fixed(const int number)
 {
-	this->number = number << this->bits;
+	std::cout << "Int constructor called"<< std::endl;
+	this->number = number << this->bits;// 10 << 8 == 2560
 }
 
 Fixed::Fixed(const float number)
 {
-	// this->number = roundf(number * pow(2, this->bits));
-	this->number = (int)number;
+	std::cout << "Float constructor called"<< std::endl;
+	this->number = number *  256;
 }
 
 Fixed::~Fixed()
@@ -41,7 +52,7 @@ Fixed::Fixed(const Fixed &t)
 
 Fixed &Fixed::operator=(Fixed const &t)
 {
-	std::cout << "Copy assignment operator " << std::endl;
+	std::cout << "Copy assignment operator called " << std::endl;
 	this->number = t.getRawBits();
 	return *this;
 }
@@ -54,12 +65,12 @@ std::ostream &operator<<(std::ostream &outpot, const Fixed &t)
 
 float Fixed::toFloat(void) const
 {
-	return ((float)this->getRawBits());
+	return ((int)this->getRawBits() / 256);
 }
 
 int Fixed::toInt(void) const
 {
-	return (this->getRawBits());
+	return (this->getRawBits() >> this->bits);
 }
 
 int Fixed::getRawBits() const
