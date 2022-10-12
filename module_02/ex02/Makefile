@@ -1,7 +1,10 @@
-NAME = ClapTraps
-FLAGS = c++ -Wall -Wextra -Werror -std=c++98
-SRC= FragTrap.cpp main.cpp
-OBJS= $(SRV:.cpp=.o)
+NAME = Fixed
+RM = rm -rf
+HEADER = Fixed.hpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp Fixed.cpp 
+CC = c++
+OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
 	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -g
 all: $(NAME)
