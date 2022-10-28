@@ -5,75 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 19:23:36 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/11 11:30:47 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/10/23 16:26:28 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/26 13:49:04 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-
-int calcPow(int a, int b)
-{
-	int result = 1;
-	for (int i = 0; i < b; i++)
-		result*= a;
-	return (result);
-}
-
-
-Fixed::Fixed()
+Fixed::Fixed::Fixed()
 {
 	this->number = 0;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called\n"; 
 }
-Fixed::Fixed(const int number)
+// int constractur
+Fixed::Fixed::Fixed(int n)
 {
-	std::cout << "Int constructor called"<< std::endl;
-	this->number = number << this->bits;// 10 << 8 == 2560
+	std::cout << "Int constructor called\n"; 
+	this->number = (n * (1 << this->bits));
+}
+// float constractur
+Fixed::Fixed::Fixed(float n)
+{
+	float r = n *(1<<this->bits);
+	this->number = (int)roundf(r);
+	std::cout << "Float constructor called\n"; 
 }
 
-Fixed::Fixed(const float number)
+Fixed::Fixed::~Fixed()
 {
-	std::cout << "Float constructor called"<< std::endl;
-	this->number = number *  256;
+	std::cout << "Destructor called\n";
 }
 
-Fixed::~Fixed()
+Fixed::Fixed(const Fixed &fixed_p)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Copy constructor called\n"; 
+	*this = fixed_p;
+	// this->number = fixed_p.getRawBits();
 }
-Fixed::Fixed(const Fixed &t)
+Fixed &Fixed::operator=(const Fixed &t)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	this->number = t.getRawBits();
+	std::cout << "Copy assignment operator called\n"; 
+	if (this != &t)
+		this->number = t.getRawBits();
+	return (*this);
 }
-
-Fixed &Fixed::operator=(Fixed const &t)
+int Fixed::getRawBits(void) const 
 {
-	std::cout << "Copy assignment operator called " << std::endl;
-	this->number = t.getRawBits();
-	return *this;
+	return(this->number);
 }
-
-std::ostream &operator<<(std::ostream &outpot, const Fixed &t)
+//outpot stream
+std::ostream &operator<<(std::ostream& output , Fixed const & n)
 {
-	outpot << t.toFloat();
-	return outpot;
+	output << n.toFloat();
+	return output;
 }
-
-float Fixed::toFloat(void) const
-{
-	return ((int)this->getRawBits() / 256);
-}
-
+// function tofloat toint
 int Fixed::toInt(void) const
 {
-	return (this->getRawBits() >> this->bits);
+	return this->getRawBits() / (1 << this->bits) ;
 }
-
-int Fixed::getRawBits() const
+float Fixed::toFloat(void) const
 {
-	return (this->number);
+	return((float)this->getRawBits()/ (1<<this->bits));
 }

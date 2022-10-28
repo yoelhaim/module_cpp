@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 19:17:21 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/09 20:34:43 by pro              ###   ########.fr       */
+/*   Created: 2022/10/23 15:47:44 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/25 16:26:22 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
-
 class Fixed
 {
 private:
+	static const int bits = 8;
 	int number;
-	static const int bits =8;
-
 public:
 	Fixed();
-	Fixed(const Fixed &t);
-	Fixed &operator=(const Fixed &t);
 	~Fixed();
-	int getRawBits() const;
-	void setRawBits(int const raw);
+	Fixed &operator=(const Fixed &t);
+	Fixed(const Fixed & fixed_p);
+	int getRawBits(void) const ;
 };
+

@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 15:54:42 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/27 13:37:18 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/10/23 08:58:25 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/28 17:03:18 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
-int main()
+class ClapTrap
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("fardi");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
-}
+private:
+	unsigned int hit;
+	unsigned int energy_point;
+	unsigned int attack_damage;
+	std::string name;
+
+public:
+	ClapTrap();
+	ClapTrap(std::string name);
+	// ClapTrap &ClapTrap(const ClapTrap &clap);
+	~ClapTrap();
+	void attack(const std::string &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+};

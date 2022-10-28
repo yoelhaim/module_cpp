@@ -3,31 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 19:17:21 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/09 21:53:14 by pro              ###   ########.fr       */
+/*   Created: 2022/10/23 15:47:44 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/27 22:42:40 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
-
 class Fixed
 {
 private:
-	int number;
 	static const int bits = 8;
-
+	int number;
 public:
 	Fixed();
-	Fixed(const int number);
-	Fixed(const float number);
-	Fixed(const Fixed &t);
-	Fixed &operator=(const Fixed &t);
-	~Fixed();
+	Fixed(int n);// constarctur call  if is int
+	Fixed(float n);// constractur call if is float
 	int toInt(void) const;
 	float toFloat(void) const;
-	int getRawBits() const;
+	~Fixed();// destractur
+	Fixed &operator=(const Fixed &t);// copy constarctur assignment operator
+	Fixed(const Fixed & fixed_p); // copy constractur
+	int getRawBits(void) const ;
 };
+std::ostream &operator<<(std::ostream& shift , Fixed const & n) ;
 
-std::ostream &operator<<(std::ostream &outpot, const Fixed &t);

@@ -1,21 +1,21 @@
 NAME = Fixed
-RM = rm -rf
-HEADER = Fixed.hpp
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Fixed.cpp 
 CC = c++
-OBJ = $(SRC:.cpp=.o)
-$(NAME): $(OBJ)
-	 @$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -g
-all: $(NAME)
-%.o:%.cpp  $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@ -g
-	@echo "successfully compile ... $<"
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+RM = rm -rf 
+SRC = main.cpp Fixed.cpp 
+OBJC= $(SRC:.cpp=.o)
+$(NAME) : $(OBJC) Fixed.hpp
+	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
+	 @echo "successfully compile" $(SRC) 
+
+all : $(NAME)	
+%.o:%.cpp Fixed.hpp
+	@$(CC) $(CFLAGS) -c $< -o $@
 clean :
-	@$(RM) $(OBJ)
-	@echo "successfully removed ..."
-fclean : clean
+	@$(RM) $(OBJC)
+	@echo "successfully removed " $(OBJC) 
+fclean: clean
 	@$(RM) $(NAME)
-	@echo "successfully all removed ..."
+	@echo "successfully removed " $(NAME)
 re : fclean all
-.PHONY: re clean fclean all
+.PHONY: clean fclean all re
