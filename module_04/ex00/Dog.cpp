@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 15:47:44 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 23:16:11 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/10/29 17:46:52 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/29 17:58:41 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
-class Fixed
-{
-private:
-	static const int bits = 8;
-	int number;
-public:
-	Fixed();
-	~Fixed();
-	Fixed &operator=(const Fixed &t);
-	Fixed(const Fixed & fixed_p);
-	int getRawBits(void) const ;
-	void setRawBits(int const raw);
-};
+#include "Dog.hpp"
 
+Dog::Dog()
+{
+	std::cout << "dog default constractur called ! \n";
+}
+
+Dog::~Dog()
+{
+	std::cout << "dog destractur called ! \n";
+}
+void Dog::makeSound()
+{
+	std::cout << "Dog make how how"<< std::endl;
+}

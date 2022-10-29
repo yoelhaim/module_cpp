@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:58:25 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/28 17:03:18 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:12:40 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ private:
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
-	// ClapTrap &ClapTrap(const ClapTrap &clap);
+    ClapTrap(const ClapTrap &clap);
+    ClapTrap & operator=(const ClapTrap &clap);
 	~ClapTrap();
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);

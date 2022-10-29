@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 16:26:28 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/27 21:11:29 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/10/29 23:16:44 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,8 @@ int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return(this->number);
+}
+void Fixed::setRawBits(int const raw)
+{
+	this->number = raw;
 }

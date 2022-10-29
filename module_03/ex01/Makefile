@@ -1,9 +1,9 @@
 NAME = ClapTrap
-HAEDER = ClapTrap.hpp
+HAEDER = ClapTrap.hpp ScavTrap.hpp
 CFLAGS= -Wall -Wextra -Werror
 CC = c++
 RM = rm -rf
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJC = $(SRC:.cpp=.o)
 
 %.o : %.c $(OBJC)
