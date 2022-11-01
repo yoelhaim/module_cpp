@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 20:38:02 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/01 13:38:45 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/01 13:51:02 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-int main()
+Brain::Brain()
 {
-	ScavTrap a("scav");
-	ScavTrap c("rolf");
-	a.attack("scava");
-	
-	c.takeDamage(10);
-	c.attack("scava");
-	c.attack("scava");
-	a.attack("scava");
-	a.attack("scava");
-	a.beRepaired(1);
-	ClapTrap b("clap");
-	b.attack("cloop");
+}
 
+Brain::~Brain()
+{
+}
+
+
+Brain::Brain (const Brain &t){
+	*this = t;
+	
+}
+Brain &Brain::operator= (const Brain &t){
+	// if (this != &t)
+	// 	this->ideas = t.ideas;
+	(void )t;
+	return (*this);
 	
 }

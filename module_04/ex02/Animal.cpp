@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 17:46:17 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 13:22:58 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:19:05 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,4 @@ Animal::~Animal()
 std::string Animal::getType() const
 {
 	return (this->type);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "Animal make sound"<< std::endl;
 }

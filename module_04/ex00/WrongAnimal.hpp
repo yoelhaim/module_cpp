@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 20:38:02 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/10/29 17:46:08 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/29 18:10:47 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once 
+#include <iostream>
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-int main()
+class WrongAnimal
 {
-	ScavTrap a("scav");
-	ScavTrap c("rolf");
-	a.attack("scava");
+protected:
+	std::string type;
 	
-	c.takeDamage(10);
-	c.attack("scava");
-	c.attack("scava");
-	a.attack("scava");
-	a.attack("scava");
-	a.beRepaired(1);
-	ClapTrap b("clap");
-	b.attack("cloop");
+public:
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &t);
+	WrongAnimal & operator=(const WrongAnimal &t);
+	 ~WrongAnimal();
+	 void makeSound() const;
+	std::string getType() const;
+};
 
-	
-}

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 20:38:02 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/10/29 17:46:04 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/01 13:47:26 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-int main()
+#pragma once
+#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
+class Dog : public Animal
 {
-	ScavTrap a("scav");
-	ScavTrap c("rolf");
-	a.attack("scava");
-	
-	c.takeDamage(10);
-	c.attack("scava");
-	c.attack("scava");
-	a.attack("scava");
-	a.attack("scava");
-	a.beRepaired(1);
-	ClapTrap b("clap");
-	b.attack("cloop");
+private:
+	Brain *brain;
 
-	
-}
+public:
+	 Dog();
+	~Dog();
+	Dog(const Dog &t);
+	Dog &operator=(const Dog &t);
+	void makeSound() const;
+};

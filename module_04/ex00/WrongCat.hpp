@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 20:38:02 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/10/29 17:56:42 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/10/29 17:58:18 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once 
+#include <iostream>
+#include "WrongAnimal.hpp"
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-int main()
+class WrongCat: public WrongAnimal
 {
-	ScavTrap a("scav");
-	ScavTrap c("rolf");
-	a.attack("scava");
-	
-	c.takeDamage(10);
-	c.attack("scava");
-	c.attack("scava");
-	a.attack("scava");
-	a.attack("scava");
-	a.beRepaired(1);
-	ClapTrap b("clap");
-	b.attack("cloop");
+public:
+	WrongCat();
+	~WrongCat();
+	void makeSound() const;
+};
 
-	
-}

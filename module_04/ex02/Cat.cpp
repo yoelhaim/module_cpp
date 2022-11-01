@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 17:46:34 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 13:23:48 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:08:39 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ Cat::Cat()
 {
 	std::cout << "cat default contructor called ! \n";
 	this->type = "Cat";
+	this->brain = new Brain();
 }
 
 Cat::~Cat()
 {
+	delete this->brain;
 	std::cout << "cat destructor called ! \n";
 }
 
