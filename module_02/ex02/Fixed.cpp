@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 16:26:28 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/27 21:03:29 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 09:49:42 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Fixed::Fixed::Fixed()
 	this->number = 0;
 }
 // int constractur
-Fixed::Fixed::Fixed(int n)
+Fixed::Fixed::Fixed(const int n)
 {
-	this->number = (n << this->bits);
+	this->number = n << this->bits;
 }
 // float constractur
-Fixed::Fixed::Fixed(float n)
+Fixed::Fixed::Fixed(const float n)
 {
 	float r = n * (1 << this->bits);
 	this->number = (int)roundf(r);
@@ -59,7 +59,7 @@ Fixed Fixed::operator-(const Fixed &t)
 }
 Fixed Fixed::operator/(const Fixed &t)
 {
-	return (Fixed(this->toFloat() + t.toFloat()));
+	return (Fixed(this->toFloat() / t.toFloat()));
 }
 
 ///  comparison operators
@@ -141,6 +141,12 @@ int Fixed::getRawBits(void) const
 {
 	return (this->number);
 }
+
+void Fixed::setRawBits(int const raw)
+{
+	this->number = raw ;
+}
+
 // outpot stream
 std::ostream &operator<<(std::ostream &output, Fixed const &n)
 {

@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:47:44 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/27 21:03:42 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 09:46:08 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ private:
 	int number;
 public:
 	Fixed();
-	Fixed(int n);
-	Fixed(float n);
+	Fixed(const int n);
+	Fixed(const float n);
 	int toInt(void) const;
 	float toFloat(void) const;
 	~Fixed();
@@ -32,6 +32,7 @@ public:
 	Fixed  operator--(int);
 	Fixed(const Fixed & fixed_p);
 	int getRawBits(void) const ;
+	void setRawBits(int const raw);
 	static  Fixed  &max(Fixed &a, Fixed &b)  ;
 	static const Fixed  &max(Fixed  const &a, Fixed const  &b) ;
 	static  Fixed  &min(Fixed &a, Fixed &b)  ;
@@ -49,5 +50,5 @@ public:
 	bool	operator==(const Fixed &t);
 	bool	operator!=(const Fixed &t);
 };
-std::ostream &operator<<(std::ostream& shift , Fixed const & n) ;
+std::ostream &operator<<(std::ostream &output, Fixed const &n);
 

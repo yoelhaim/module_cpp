@@ -18,22 +18,5 @@ int main()
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 
-	// float nbr =  42.42f;
-
-	// float nb = nbr * (1<<8);
-
-	// int r = (int) roundf(nb);
-
-	// float rf = (float) r / 256 ;
-
-	// cout << nb << endl;
-	// cout << r << endl;
-	// cout << (rf) << endl;
-
-	// double n1 = 0.1;
-	// double n2 = 0.2;
-	// double n3 = 0.3;
-	// cout << roundf(n1 + n2)<< endl;
-	// if (n1 + n2 == n3)
-	// 	cout << "hello"<< endl;
+	
 }

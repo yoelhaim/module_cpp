@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 13:31:18 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/10/30 17:05:48 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,15 @@ int main()
 	clap.attack("heho");
 	clap.attack("heho");
 	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
-	clap.attack("heho");
 	clap.takeDamage(10);
-	clap.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.beRepaired(10);
-	c.takeDamage(10);
+	clap.attack("heho");
+	clap.attack("heho");
+	clap.attack("heho");
+	clap.attack("heho");
+	clap.attack("heho");
+	clap.attack("heho");
+	
+
 
 	
 }

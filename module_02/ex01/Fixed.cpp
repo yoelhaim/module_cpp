@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 16:26:28 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/26 13:49:04 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 09:49:01 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ Fixed::Fixed::Fixed()
 	std::cout << "Default constructor called\n"; 
 }
 // int constractur
-Fixed::Fixed::Fixed(int n)
+Fixed::Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called\n"; 
-	this->number = (n * (1 << this->bits));
+	this->number = n << this->bits;
 }
 // float constractur
-Fixed::Fixed::Fixed(float n)
+Fixed::Fixed::Fixed(const float n)
 {
 	float r = n *(1<<this->bits);
 	this->number = (int)roundf(r);
@@ -54,6 +54,12 @@ int Fixed::getRawBits(void) const
 {
 	return(this->number);
 }
+
+void Fixed::setRawBits(int const raw)
+{
+	this->number = raw;
+}
+
 //outpot stream
 std::ostream &operator<<(std::ostream& output , Fixed const & n)
 {
@@ -63,7 +69,7 @@ std::ostream &operator<<(std::ostream& output , Fixed const & n)
 // function tofloat toint
 int Fixed::toInt(void) const
 {
-	return this->getRawBits() / (1 << this->bits) ;
+	return this->getRawBits() << this->bits ;
 }
 float Fixed::toFloat(void) const
 {
