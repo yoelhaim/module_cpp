@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 13:52:42 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 14:33:31 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 11:05:53 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
  ScavTrap::ScavTrap()
 {
-	std::cout << "ScavTrap default Constarctur called ! \n";
+	std::cout << "ScavTrap default constructor called ! \n";
 	this->name = "";
 	this->hit = 100;
 	this->energy_point = 50;
@@ -23,7 +23,7 @@
 }
  ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "ScavTrap constractor called \n";
+	std::cout << "ScavTrap constructor called \n";
 	this->name = name;
 	this->hit = 100;
 	this->energy_point = 50;
@@ -32,7 +32,7 @@
 
  ScavTrap::~ ScavTrap()
 {
-	std::cout << "ScavTrap destractur called !\n";
+	std::cout << "ScavTrap Destructor called !\n";
 }
 ScavTrap::ScavTrap(const ScavTrap &t)
 {
@@ -64,5 +64,5 @@ void ScavTrap::attack(const std::string &target)
 		this->energy_point--;
 	}
 	else
-		std::cout << "no attaks\n";
+			std::cout << "ScavTrap " << this->name << " is a dead" << std::endl;
 }

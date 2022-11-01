@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 16:40:30 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 11:09:20 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "FragTrap.hpp"
 int main()
 {
-	ScavTrap a = ClapTrap("djddjg");
-	a.attack("sss");
+	ClapTrap a = ScavTrap("heeeeeeelllllllll");
+	a.attack("hello");
+	ScavTrap c;
+	c.attack("mateeeeeeeeeeef");
 }

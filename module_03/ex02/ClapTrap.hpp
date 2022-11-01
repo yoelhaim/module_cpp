@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:58:25 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 15:58:49 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 11:00:17 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
     ClapTrap & operator=(const ClapTrap &clap);
 	~ClapTrap();
 	 
-   void attack(const std::string &target);
+    void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };

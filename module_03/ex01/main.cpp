@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 14:41:50 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:43:24 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,45 +20,11 @@ int main()
 	a.attack("you");
 	
 	c.takeDamage(10);
-	// ClapTrap b("matef");
-	// b.attack("amiski");
-	
 	c.attack("heeeeee");
 	c.attack("heeeeee");
 	a.attack("heeeeee");
 	a.attack("heeeeee");
 	a.beRepaired(1);
-	
-	//a.takeDamage(10);
-	// ClapTrap clap("clap");
-	// ClapTrap c (clap);
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.attack("heho");
-	// clap.takeDamage(10);
-	// clap.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.beRepaired(10);
-	// c.takeDamage(10);
 
 	
 }

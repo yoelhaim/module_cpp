@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:53:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/10/29 15:52:32 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 11:06:22 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap()
 {
-	std::cout << "FragTrap default Contractur called ! \n";
+	std::cout << "FragTrap default constructor called ! \n";
 	this->name = "";
 	this->hit = 100;
 	this->energy_point = 50;
@@ -27,7 +27,7 @@ FragTrap:: FragTrap(const FragTrap &t)
 }
 FragTrap  &FragTrap::operator=(const FragTrap &t)
 {
-	std::cout << "FragTrap copy assignment  Contractur called ! \n";
+	std::cout << "FragTrap copy assignment  constructor called ! \n";
 	if (this != &t)
 	{
 		this->hit = t.hit;
@@ -39,12 +39,12 @@ FragTrap  &FragTrap::operator=(const FragTrap &t)
 }
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap  destractur called ! \n";
+	std::cout << "FragTrap  Destructor called ! \n";
 }
 
 FragTrap::FragTrap(std::string name)
 {
-	std::cout << "FragTrap  conatractur called ! \n";
+	std::cout << "FragTrap  constructor called ! \n";
 	this->name = name;
 	this->hit = 100;
 	this->energy_point = 50;
@@ -53,4 +53,15 @@ FragTrap::FragTrap(std::string name)
 
 void highFivesGuys(void){
 	std::cout << "high Fives Guys\n";
+}
+void FragTrap::attack(const std::string &target)
+{
+	
+	if (this->energy_point > 0 && this->hit > 0)
+	{
+	 	std::cout<<"FragTrap " << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
+		this->energy_point--;
+	}
+	else
+			std::cout << "FragTrap " << this->name << " is a dead" << std::endl;
 }
