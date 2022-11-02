@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:59:08 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 11:05:05 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:08:21 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hit > 0 && this->energy_point > 0)
 	{
-		std::cout << "ClapTrap " << this->name << " lost hit " << amount << std::endl;
+		std::cout << "ClapTrap " << this->name << " is lost hit " << amount << std::endl;
 		this->hit -= amount;
-		hit < 0? this->hit = 0 : this->hit; 
+		this->hit < 0 ? this->hit = 0 : this->hit; 
 	}
 }
 void ClapTrap::beRepaired(unsigned int amount)
@@ -72,17 +72,16 @@ void ClapTrap::beRepaired(unsigned int amount)
 		this->energy_point--;
 	}
 	else
-		std::cout << "ClapTrap canot energy\n";
+		std::cout << "ClapTrap There is no energy\n";
 }
 
 void ClapTrap::attack(const std::string &target)
 {
-	if (this->energy_point > 0 && this->hit > 0)
+	if (this->energy_point <= 0 || this->hit <= 0)
+		std::cout << "Claptrap " << this->name << " is a dead" << std::endl;
+	else
 	{
-		
 		std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
 		this->energy_point--;
 	}
-	else
-		std::cout << "Claptrap " << this->name << " is a dead" << std::endl;
 }

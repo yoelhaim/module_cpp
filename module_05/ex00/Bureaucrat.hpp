@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 12:00:46 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/02 12:39:41 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ClapTrap.hpp"
-int main()
+#pragma once
+#include <iostream>
+class Bureaucrat
 {
-	ClapTrap clap("clap");
-	clap.attack("clop");
-	clap.attack("clop");
-	clap.attack("clop");
+private:
+	const std::string name;
+	int grade;
+public:
+	Bureaucrat();
+	~Bureaucrat();
+	std::string getName();
+	int getGrade();
+	void increment();
+	void decrement();
+	class GradeTooHighException : public std::exception{
+		public:
+			const char * what() const exception;
+	};
+};
 
-	clap.attack("clop");
-	
-	clap.beRepaired(2);
-	
-	clap.attack("clop");
-	clap.attack("clop");
-	clap.attack("clop");
-	clap.attack("clop");
-	clap.attack("clop");
-
-	return 0;	
-}
