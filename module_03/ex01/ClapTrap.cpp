@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:59:08 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 12:06:14 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:34:12 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap default constructor called \n";
-	this->name = "";
+	this->name = "none";
 	this->hit = 100;
 	this->energy_point = 50;
 	this->attack_damage = 20;
@@ -59,8 +59,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (this->hit > 0 && this->energy_point > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " lost hit " << amount << std::endl;
-		this->hit -= amount;
-		hit < 0? this->hit = 0 : this->hit; 
+		amount > this->hit ? this->hit = 0 : this->hit -= amount;
 	}
 }
 void ClapTrap::beRepaired(unsigned int amount)
