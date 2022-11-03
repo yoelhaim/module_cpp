@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:59:08 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 12:08:21 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:33:58 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap default constructor called \n";
-	this->name = "";
+	this->name = "none";
 	this->hit = 10;
 	this->energy_point = 10;
 	this->attack_damage = 0;
@@ -59,15 +59,15 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (this->hit > 0 && this->energy_point > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " is lost hit " << amount << std::endl;
-		this->hit -= amount;
-		this->hit < 0 ? this->hit = 0 : this->hit; 
+		amount > this->hit ? this->hit = 0 : this->hit -= amount;
+		;
 	}
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->energy_point > 0 && this->hit > 0)
 	{
-		std::cout << "ClapTrap "<< this->name << " repaired hit " << amount <<  std::endl;
+		std::cout << "ClapTrap " << this->name << " repaired hit " << amount << std::endl;
 		this->hit += amount;
 		this->energy_point--;
 	}

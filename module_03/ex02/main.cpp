@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 11:09:20 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:28:26 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "FragTrap.hpp"
 int main()
 {
-	ClapTrap a = ScavTrap("heeeeeeelllllllll");
+	ClapTrap a = ScavTrap("scav");
 	a.attack("hello");
 	ScavTrap c;
 	c.attack("mateeeeeeeeeeef");

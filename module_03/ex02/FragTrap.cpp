@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:53:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 12:07:15 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:27:06 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap default constructor called ! \n";
-	this->name = "";
+	this->name = "none";
 	this->hit = 100;
 	this->energy_point = 50;
 	this->attack_damage = 30;
