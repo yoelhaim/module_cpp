@@ -16,12 +16,12 @@ SRC = main.cpp \
 OBJC= $(SRC:.cpp=.o)
 
 $(NAME) : $(OBJC) $(HEADER)
-	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJC) -o $(NAME) -g
 	 @echo "successfully compile" $(SRC) 
 
 all : $(NAME)	
 %.o:%.cpp $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ -g
 clean :
 	@$(RM) $(OBJC)
 	@echo "successfully removed " $(OBJC) 

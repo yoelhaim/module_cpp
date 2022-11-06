@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 17:46:08 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 12:23:32 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/05 14:32:20 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ class Animal
 {
 protected:
 	std::string type;
-	
 public:
 	Animal();
 	Animal(const Animal &t);
