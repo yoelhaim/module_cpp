@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 17:47:03 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/01 14:20:55 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:50:43 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@
 
 int main()
 {	
-	int num = 10;
+	int num = 100;
 	Animal *s[num];
-	
 	for (int i = 0; i < num; i++)
 		 i % 2 ==0 ? s[i] = new Dog() : s[i] = new Cat();
 		 
 	for (int i = 0; i < num; i++)
-		 std::cout << s[i]->getType() << std::endl;
+		 std::cout << i + 1 << " : " << s[i]->getType() << std::endl;
 		 
 	for (int i = 0; i < num; i++)
 		delete s[i];
+	Cat a;
+
 	return (0);
 }

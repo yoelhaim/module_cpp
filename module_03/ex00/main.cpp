@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 19:38:47 by pro              ###   ########.fr       */
+/*   Updated: 2022/11/03 19:36:28 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ int main()
 	clap.attack("clop");
 
 	clap.attack("clop");
+	clap.setName("bo3o");
 
 	clap.beRepaired(2);
 	clap.beRepaired(100);
-	clap.takeDamage(20);
+	clap.takeDamage(clop.getdamage());
 	clap.attack("clop");
 	clap.attack("clop");
 	clap.attack("clop");

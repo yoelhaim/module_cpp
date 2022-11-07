@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:53:24 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 19:27:06 by pro              ###   ########.fr       */
+/*   Updated: 2022/11/03 20:50:32 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,18 @@ FragTrap::FragTrap()
 	this->energy_point = 50;
 	this->attack_damage = 30;
 }
+FragTrap::FragTrap(std::string name)
+{
+	std::cout << "FragTrap  constructor called ! \n";
+	this->name = name;
+	this->hit = 100;
+	this->energy_point = 50;
+	this->attack_damage = 30;
+}
 
 FragTrap:: FragTrap(const FragTrap &t)
 {
+	std::cout << "Fragtrap copy constructor called !" << std::endl;
 	*this= t;
 }
 FragTrap  &FragTrap::operator=(const FragTrap &t)
@@ -39,20 +48,12 @@ FragTrap  &FragTrap::operator=(const FragTrap &t)
 }
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap  Destructor called ! \n";
+	std::cout << "FragTrap  Destructor called !\n";
 }
 
-FragTrap::FragTrap(std::string name)
-{
-	std::cout << "FragTrap  constructor called ! \n";
-	this->name = name;
-	this->hit = 100;
-	this->energy_point = 50;
-	this->attack_damage = 30;
-}
 
-void highFivesGuys(void){
-	std::cout << "high Fives Guys\n";
+void FragTrap::highFivesGuys(void){
+	std::cout << "FragTrap high Fives Guys\n";
 }
 void FragTrap::attack(const std::string &target)
 {

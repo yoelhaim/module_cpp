@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:59:18 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 19:28:26 by pro              ###   ########.fr       */
+/*   Updated: 2022/11/03 19:42:39 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,14 @@
 int main()
 {
 	ClapTrap a = ScavTrap("scav");
-	a.attack("hello");
-	ScavTrap c;
-	c.attack("mateeeeeeeeeeef");
+	a.attack("scav1");
+	ScavTrap b;
+	b.guardGate();
+	b.attack("kiwalo");
+	FragTrap   c = FragTrap("me");
+	c.setdamage(5000);
+	c.highFivesGuys();
+	c.attack("five guys");
+	std::cout << "FragTrap ==>  " << c.getdamage()<< std::endl;
+	std::cout <<"ScavTrap ==>  " << b.getdamage()<< std::endl;
 }

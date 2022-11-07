@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:58:25 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 12:00:32 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:35:46 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ public:
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	//<========= setter ==========>
+	void setEnergy(unsigned int energy);
+	void setdamage(unsigned int damage);
+	void sethit(unsigned int hit);
+	void setName(std::string name);
+	//<========= getter ==========>
+	unsigned int  getEnergy(void) const ;
+	unsigned int  getdamage(void) const;
+	unsigned int  gethit(void) const;
+	std::string getName(void) const;
 };

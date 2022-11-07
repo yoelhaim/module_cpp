@@ -21,6 +21,17 @@ WrongCat::~WrongCat()
 {
 	std::cout << "WrongCat destructor called ! \n";
 }
+WrongCat::WrongCat(WrongCat const &t){
+	std::cout << "WrongCat copy Contructor called ! \n";
+	*this = t;
+}
+WrongCat &WrongCat::operator=(WrongCat const &t)
+{
+	std::cout << "WrongCat copy assignmanent operator called ! \n";
+	if (this != &t)
+		this->type = t.getType();
+	return (*this);
+}
 
 void WrongCat::makeSound() const
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 13:52:42 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/02 19:26:51 by pro              ###   ########.fr       */
+/*   Updated: 2022/11/03 20:46:34 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@
 }
 ScavTrap::ScavTrap(const ScavTrap &t)
 {
+	std::cout << "ScavTrap copy constructor called !" << std::endl;
 	*this=  t;
 }
 ScavTrap & ScavTrap::operator=(const ScavTrap &t){
-	
+	std::cout << "ScavTrap copy assignament operateur called !" << std::endl;
 	if (this != &t)
 	{
 	this->hit = t.hit;
@@ -52,7 +53,7 @@ ScavTrap & ScavTrap::operator=(const ScavTrap &t){
 
 
 void ScavTrap::guardGate(){
-	std::cout << "ScavTrap is now in Gate keeper mode\n";
+	std::cout << "ScavTrap  "<< this->name <<" is now in Gate keeper mode\n";
 }
 
 void ScavTrap::attack(const std::string &target)
