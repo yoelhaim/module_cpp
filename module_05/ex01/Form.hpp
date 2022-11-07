@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 11:28:45 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/07 11:32:00 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/07 11:52:35 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <exception>
-class Bureaucrat
+
+class Form
 {
 private:
-	const std::string name;
-	int grade;
+	bool _signed;
+	const int iSign;
+	const int  eSign;
 public:
-	Bureaucrat();
-	~Bureaucrat();
-	Bureaucrat(Bureaucrat const &t);
-	Bureaucrat &operator=(Bureaucrat const &t);
-	std::string getName() const;
-	int getGrade() const;
-	void increment();
-	void decrement();
-	// setter
-	void setGrade(int grade);
+	Form();
+	~Form();
+	Form(const Form &t);
+	Form &operator=(const Form &t);
+	void beSigned();
+	void signForm();
 	class GradeTooHighException : public std::exception{
 		public:
 			const char * what() const throw();
@@ -38,5 +35,5 @@ public:
 			const char * what() const throw();
 	};
 };
+std::ostream &operator<<(std::ostream& output , Form const &obj);
 
-std::ostream &operator<<(std::ostream& output , Bureaucrat const &obj);
