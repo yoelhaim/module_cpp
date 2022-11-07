@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 11:29:17 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:08:54 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int main()
 {
-	Bureaucrat a;
+	try
+	{
+		Bureaucrat a("bo3o", 100);
+
 	//   a.setGrade(2);
 	try
 	{
@@ -41,6 +44,12 @@ int main()
 		std::cout <<a.getName() << ", bureaucrat grade " <<a.getGrade() << std::endl;
 	}
 	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+		}
+	catch(const std::exception &e)
 	{
 		std::cerr << e.what() << '\n';
 	}

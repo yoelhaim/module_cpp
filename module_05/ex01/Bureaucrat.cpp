@@ -6,15 +6,19 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 11:30:48 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:55:11 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("none")
+Bureaucrat::Bureaucrat(std::string name , int grade):name(name),grade(grade)
 {
-	this->grade = 1;
+		std::cout << "default constrauctor called !\n";
+		if (this->grade > 150)
+			throw Bureaucrat::GradeTooLowException();
+		if (this->grade < 1)
+			throw Bureaucrat::GradeTooHighException();
 }
 
 Bureaucrat::~Bureaucrat()
@@ -78,4 +82,10 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
 {
 	output << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 	return output;
+}
+
+void Bureaucrat::signForm(Form & form)
+{
+
+	   form.beSigned(*this);
 }

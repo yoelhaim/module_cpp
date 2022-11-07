@@ -6,20 +6,21 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 11:28:45 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:54:52 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 class Bureaucrat
 {
 private:
 	const std::string name;
 	int grade;
 public:
-	Bureaucrat();
+	Bureaucrat(std::string name = "", int  grade = 0);
 	~Bureaucrat();
 	Bureaucrat(Bureaucrat const &t);
 	Bureaucrat &operator=(Bureaucrat const &t);
@@ -27,6 +28,7 @@ public:
 	int getGrade() const;
 	void increment();
 	void decrement();
+	void signForm(Form &form);
 	// setter
 	void setGrade(int grade);
 	class GradeTooHighException : public std::exception{

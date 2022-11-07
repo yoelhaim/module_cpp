@@ -1,4 +1,4 @@
-NAME = Form
+NAME = Form		
 HEADER = Bureaucrat.hpp Form.hpp
 CC = c++
 FLAGS = -Wall -Wextra -Werror
