@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 19:16:25 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:59:08 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main()
 	try
 	{
 		Form a(12, 100, "helo");
+		Bureaucrat b("hi", 140);
+		b.signForm(a);
 	}
 	catch(const std::exception &e)
 	{

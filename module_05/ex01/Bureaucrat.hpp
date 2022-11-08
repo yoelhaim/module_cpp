@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 19:54:52 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:50:24 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+class Bureaucrat;
 #include <iostream>
 #include <exception>
 #include "Form.hpp"

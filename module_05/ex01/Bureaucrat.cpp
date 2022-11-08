@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pro <pro@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 19:55:11 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:58:54 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,13 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
 void Bureaucrat::signForm(Form & form)
 {
 
-	   form.beSigned(*this);
+	 try
+	 {
+		  form.beSigned(*this);
+	 }
+	 catch(const std::exception& e)
+	 {
+		 std::cerr << e.what() << '\n';
+	 }
+	 
 }
