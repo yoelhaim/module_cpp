@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 13:58:11 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/08 15:27:59 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/08 19:27:18 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#pragma once
+#include <iostream>
 #include "Form.hpp"
-
-int main()
+class PresidentialPardonForm : public Form
 {
-	try
-	{
+private:
+	std::string target;
 
-		Form a(12, 1, "war9a");
-		Bureaucrat b("matef", 12);
-		b.signForm(a);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-}
+public:
+	PresidentialPardonForm();
+	~PresidentialPardonForm();
+	PresidentialPardonForm(PresidentialPardonForm const &t);
+	PresidentialPardonForm &operator=(PresidentialPardonForm const &t);
+	void addActon() const;
+	std::string getTarget() const;
+};

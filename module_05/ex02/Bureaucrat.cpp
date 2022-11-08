@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 20:47:28 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:47:18 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 		throw Bureaucrat::GradeTooLowException();
 	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	if (name.empty())
-	{
-		std::cout << "error name";
-		exit(1);
-	}
 }
 
 Bureaucrat::~Bureaucrat()
 {
 }
-
 Bureaucrat::Bureaucrat(Bureaucrat const &t)
 {
 	*this = t;
@@ -85,4 +79,32 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
 {
 	output << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 	return output;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getNameForm() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		form.addActon();
+		std::cout << this->getName() << " executed " << form.getNameForm() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
