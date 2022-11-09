@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:17:42 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:19:48 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void RobotomyRequestForm::addActon() const
 	else
 		std::cout << this->getTarget() << "  robotomized Feiled " << std::endl;
 }
+
 const char *RobotomyRequestForm::NotValid::what() const throw()
 {
 	return "can't empty target.";

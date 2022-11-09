@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:28:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:18:57 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/08 15:28:13 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/09 19:18:22 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include "Form.hpp"
-#include <iostream>
-#include <fstream>
-
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
 private:
 	std::string target;
 
 public:
-	ShrubberyCreationForm(std::string target = "");
-	~ShrubberyCreationForm();
-	ShrubberyCreationForm(ShrubberyCreationForm const &t);
-	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &t);
-
+	RobotomyRequestForm(std::string target = "");
+	~RobotomyRequestForm();
+	RobotomyRequestForm(RobotomyRequestForm const &t);
+	RobotomyRequestForm &operator=(RobotomyRequestForm const &t);
 	void addActon() const;
 	std::string getTarget() const;
 	class NotValid : public std::exception

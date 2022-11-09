@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/07 19:05:30 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:52:07 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ class Bureaucrat
 private:
 	const std::string name;
 	int grade;
+
 public:
-	Bureaucrat(std::string name = "", int  grade = 0);
+	Bureaucrat(std::string name = "", int grade = 0);
 	~Bureaucrat();
 	Bureaucrat(Bureaucrat const &t);
 	Bureaucrat &operator=(Bureaucrat const &t);
@@ -29,14 +30,21 @@ public:
 	void decrement();
 	// setter
 	void setGrade(int grade);
-	class GradeTooHighException : public std::exception{
-		public:
-			const char * what() const throw();
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		const char *what() const throw();
 	};
-	class GradeTooLowException : public std::exception{
-		public:
-			const char * what() const throw();
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+	class inValid : public std::exception
+	{
+	public:
+		const char *what() const throw();
 	};
 };
 
-std::ostream &operator<<(std::ostream& output , Bureaucrat const &obj);
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj);

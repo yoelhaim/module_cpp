@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 17:39:54 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/07 11:32:00 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/09 14:28:17 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+class Bureaucrat;
 #include <iostream>
-#include <exception>
-#include "Form.hpp"
 
-class Bureaucrat
+class Form
 {
 private:
+	bool _signed;
+	const int SignedGrade;
+	const int executeGrade;
 	const std::string name;
-	int grade;
 
 public:
-	Bureaucrat(std::string name = "", int grade = 0);
-	~Bureaucrat();
-	Bureaucrat(Bureaucrat const &t);
-	Bureaucrat &operator=(Bureaucrat const &t);
-	std::string getName() const;
-	int getGrade() const;
-	void increment();
-	void decrement();
-	void signForm(Form &form);
-	// setter
-	void setGrade(int grade);
+	Form(const int SignedGrade = 0, const int executeGrade = 0, const std::string name = "");
+	~Form();
+	Form(const Form &t);
+	Form &operator=(const Form &t);
+	void beSigned(Bureaucrat &bureaucrat);
+	// void signForm();
+	void setSigned(bool sign);
+	std::string getNameForm() const;
+	bool getSigned() const;
+	int getSignedGrade() const;
+	int getExecuteGrade() const;
+	virtual void addActon() const = 0;
+	void execute(Bureaucrat const &executor) const;
+	// nested class
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -43,11 +47,5 @@ public:
 	public:
 		const char *what() const throw();
 	};
-	class inValid : public std::exception
-	{
-	public:
-		const char *what() const throw();
-	};
 };
-
-std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj);
+std::ostream &operator<<(std::ostream &output, Form const &form);

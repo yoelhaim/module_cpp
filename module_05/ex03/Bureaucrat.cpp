@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 17:59:15 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:00:41 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 Bureaucrat::~Bureaucrat()
 {
 }
-
 Bureaucrat::Bureaucrat(Bureaucrat const &t)
 {
 	*this = t;
@@ -68,11 +67,11 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade Too Low Exception.");
 }
+
 const char *Bureaucrat::inValid::what() const throw()
 {
 	return ("can't empty name.");
 }
-
 void Bureaucrat::setGrade(int grade)
 {
 	if (grade < 1)
@@ -98,5 +97,19 @@ void Bureaucrat::signForm(Form &form)
 	catch (const std::exception &e)
 	{
 		std::cout << this->getName() << " << couldn’t sign " << form.getNameForm() << " because he has not permission";
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		form.addActon();
+		std::cout << this->getName() << " executed " << form.getNameForm() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }

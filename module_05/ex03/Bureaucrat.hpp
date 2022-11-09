@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 17:39:54 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:40:10 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
 	void signForm(Form &form);
 	// setter
 	void setGrade(int grade);
+	void executeForm(Form const &form);
 	class GradeTooHighException : public std::exception
 	{
 	public:

@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:20 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 16:36:12 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:40:16 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ public:
 		const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+	class inValid : public std::exception
 	{
 	public:
 		const char *what() const throw();

@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 18:01:07 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:01:22 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ std::string Form::getNameForm() const
 {
 	return (this->name);
 }
-int Form::getSigned() const
+bool Form::getSigned() const
 {
 	return (this->_signed);
 }
@@ -77,6 +77,12 @@ int Form::getSignedGrade() const
 int Form::getExecuteGrade() const
 {
 	return this->executeGrade;
+}
+
+void Form::execute(Bureaucrat const &executor) const
+{
+	if (!this->getSigned() || this->executeGrade < executor.getGrade())
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &output, Form const &form)

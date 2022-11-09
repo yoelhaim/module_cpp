@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 20:47:28 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:57:06 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
 	if (this->grade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	if (this->grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	if (name.empty())
-	{
-		std::cout << "error name";
-		exit(1);
-	}
+		throw inValid();
 }
 
 Bureaucrat::~Bureaucrat()
@@ -53,13 +50,13 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::increment()
 {
 	if (this->grade == 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	this->grade--;
 }
 void Bureaucrat::decrement()
 {
 	if (this->grade == 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	this->grade++;
 }
 
@@ -71,13 +68,17 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade Too Low Exception.");
 }
+const char *Bureaucrat::inValid::what() const throw()
+{
+	return ("can't empty name.");
+}
 
 void Bureaucrat::setGrade(int grade)
 {
 	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	this->grade = grade;
 }
 

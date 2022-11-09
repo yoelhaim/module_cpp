@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 20:47:18 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:00:34 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 		throw Bureaucrat::GradeTooLowException();
 	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
+	if (name.empty())
+		throw inValid();
 }
 
 Bureaucrat::~Bureaucrat()
@@ -65,6 +67,10 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade Too Low Exception.");
 }
+const char *Bureaucrat::inValid::what() const throw()
+{
+	return ("can't empty name.");
+}
 
 void Bureaucrat::setGrade(int grade)
 {
@@ -83,7 +89,6 @@ std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
 
 void Bureaucrat::signForm(Form &form)
 {
-
 	try
 	{
 		form.beSigned(*this);
@@ -91,20 +96,13 @@ void Bureaucrat::signForm(Form &form)
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << this->getName() << " << couldn’t sign " << form.getNameForm() << " because he has not permission";
 	}
 }
 
 void Bureaucrat::executeForm(Form const &form)
 {
-	try
-	{
-		form.execute(*this);
-		form.addActon();
-		std::cout << this->getName() << " executed " << form.getNameForm() << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	form.execute(*this);
+	form.addActon();
+	std::cout << this->getName() << " executed " << form.getNameForm() << std::endl;
 }

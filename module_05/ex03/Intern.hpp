@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:28:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:18:57 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/09 11:59:17 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/09 14:30:54 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include "Form.hpp"
-#include <iostream>
-#include <fstream>
 
-class ShrubberyCreationForm : public Form
+#include <iostream>
+#include <exception>
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+class Intern
 {
 private:
-	std::string target;
-
 public:
-	ShrubberyCreationForm(std::string target = "");
-	~ShrubberyCreationForm();
-	ShrubberyCreationForm(ShrubberyCreationForm const &t);
-	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &t);
-
-	void addActon() const;
-	std::string getTarget() const;
-	class NotValid : public std::exception
+	Intern();
+	~Intern();
+	Intern(Intern const &t);
+	Intern &operator=(Intern const &t);
+	Form *makeForm(std::string nameForm, std::string target);
+	class NotExist : public std::exception
 	{
 	public:
 		const char *what() const throw();

@@ -6,20 +6,28 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 17:59:51 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:22:10 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
 	try
 	{
-		Form a(12, 1, "war9a");
-		Bureaucrat b("matef", 1);
-		b.signForm(a);
+		// Form *shre = new PresidentialPardonForm();
+		// Bureaucrat b("matef", 1);
+		// shre->beSigned(b);
+		// b.executeForm(*shre);
+		Intern someRandomIntern;
+		Form *rrf;
+		rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
 	}
 	catch (const std::exception &e)
 	{

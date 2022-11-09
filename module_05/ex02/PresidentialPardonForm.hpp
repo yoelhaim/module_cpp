@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:27:59 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 19:27:18 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:18:33 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@ private:
 	std::string target;
 
 public:
-	PresidentialPardonForm();
+	PresidentialPardonForm(std::string target = "");
 	~PresidentialPardonForm();
 	PresidentialPardonForm(PresidentialPardonForm const &t);
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &t);
 	void addActon() const;
 	std::string getTarget() const;
+	class NotValid : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
 };
