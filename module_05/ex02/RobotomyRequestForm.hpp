@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:28:13 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:18:46 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:12 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	~RobotomyRequestForm();
 	RobotomyRequestForm(RobotomyRequestForm const &t);
 	RobotomyRequestForm &operator=(RobotomyRequestForm const &t);
-	void addActon() const;
+	void action() const;
 	std::string getTarget() const;
 	class NotValid : public std::exception
 	{

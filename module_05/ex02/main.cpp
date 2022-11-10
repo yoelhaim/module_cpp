@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:21:16 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 01:33:09 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 	{
 
 		RobotomyRequestForm sh("3a9d");
-		Bureaucrat b("l9ayd", 46);
-		Bureaucrat b22("m9adem", 30);
+		Bureaucrat b("m9adem", 46);
+		Bureaucrat b22("l9ayd", 30);
 		sh.beSigned(b);
 		b22.executeForm(sh);
 	}

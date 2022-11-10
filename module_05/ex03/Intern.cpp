@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:00:00 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:22:30 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:43:31 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ Form *Intern::makeForm(std::string nameForm, std::string target)
 		"ShrubberyCreationForm",
 		"RobotomyRequestForm",
 		"PresidentialPardonForm"};
-	int i = -1;
+
+	// Form *f[3] = {&ShrubberyCreationForm() };
+
+		int i = -1;
 	while (++i < 3)
 	{
 		if (nameForm == FormObj[i])

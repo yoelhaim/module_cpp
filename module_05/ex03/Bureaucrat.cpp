@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 18:00:41 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:11 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,11 @@ void Bureaucrat::executeForm(Form const &form)
 	try
 	{
 		form.execute(*this);
-		form.addActon();
+		form.action();
 		std::cout << this->getName() << " executed " << form.getNameForm() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "don't  executed " << form.getNameForm() << '\n';
 	}
 }

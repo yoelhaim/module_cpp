@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:19:48 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:11 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ std::string RobotomyRequestForm::getTarget() const
 	return this->target;
 }
 
-void RobotomyRequestForm::addActon() const
+void RobotomyRequestForm::action() const
 {
 	srand(time(0));
 	if (rand() % 2 == 1)

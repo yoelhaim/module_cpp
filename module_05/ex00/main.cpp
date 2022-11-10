@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 16:55:21 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:12:25 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int main()
 	try
 	{
 		Bureaucrat a("Bureaucrat", 100);
-
-		//   a.setGrade(2);
 		try
 		{
 			a.increment();

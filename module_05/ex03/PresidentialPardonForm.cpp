@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:00 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:19:43 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:12 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string PresidentialPardonForm::getTarget() const
 	return this->target;
 }
 
-void PresidentialPardonForm::addActon() const
+void PresidentialPardonForm::action() const
 {
 	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

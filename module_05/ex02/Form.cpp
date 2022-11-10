@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 18:01:13 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:45:14 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 Form::Form(const int SignedGrade, const int executeGrade, const std::string name) : SignedGrade(SignedGrade), executeGrade(executeGrade), name(name)
 {
 	if (this->SignedGrade < 1)
-		throw Form::GradeTooHighException();
-	else if (this->SignedGrade > 150)
+		throw Form::GradeTooHighException("Grade Too High Exception.");
+	if (this->SignedGrade > 150)
 		throw Form::GradeTooLowException();
 	if (this->executeGrade < 1)
-		throw Form::GradeTooHighException();
-	else if (this->executeGrade > 150)
+		throw Form::GradeTooHighException("Grade Too High Exception.");
+	if (this->executeGrade > 150)
 		throw Form::GradeTooLowException();
 	this->_signed = false;
 }
@@ -45,17 +45,13 @@ void Form::setSigned(bool sign)
 {
 	this->_signed = sign;
 }
-void Form::beSigned(Bureaucrat &bureaucrat)
+Form::GradeTooHighException::GradeTooHighException(const char *msg) : msg(msg)
 {
-	if (bureaucrat.getGrade() <= this->SignedGrade)
-		setSigned(true);
-	else
-		throw Form::GradeTooHighException();
 }
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade Too High Exception.");
+	return (this->msg);
 }
 const char *Form::GradeTooLowException::what() const throw()
 {
@@ -78,15 +74,22 @@ int Form::getExecuteGrade() const
 {
 	return this->executeGrade;
 }
+void Form::beSigned(Bureaucrat &bureaucrat)
+{
+	if (bureaucrat.getGrade() <= this->SignedGrade)
+		setSigned(true);
+	else
+		throw Form::GradeTooHighException("Grade Too High Exception 22");
+}
 
 void Form::execute(Bureaucrat const &executor) const
 {
 	if (!(this->getSigned() && this->executeGrade >= executor.getGrade()))
-		throw Form::GradeTooLowException();
+		throw GradeTooHighException("couldn’t executed ");
 }
 
 std::ostream &operator<<(std::ostream &output, Form const &form)
 {
-	output << "signed is " << form.getSigned() << " SignedGrade " << form.getSignedGrade() << " executeGrade " << form.getExecuteGrade() << " name " << form.getNameForm();
+	output << "name " << form.getNameForm() << ", signed is " << form.getSigned() << ", SignedGrade " << form.getSignedGrade() << ", executeGrade " << form.getExecuteGrade();
 	return output;
 }

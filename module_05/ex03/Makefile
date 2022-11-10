@@ -1,4 +1,4 @@
-NAME = Form		
+NAME = Intern		
 HEADER = Bureaucrat.hpp Form.hpp \
 		ShrubberyCreationForm.hpp \
 		RobotomyRequestForm.hpp \

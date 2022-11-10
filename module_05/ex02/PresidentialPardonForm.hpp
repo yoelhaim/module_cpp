@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:27:59 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:18:33 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:12 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	~PresidentialPardonForm();
 	PresidentialPardonForm(PresidentialPardonForm const &t);
 	PresidentialPardonForm &operator=(PresidentialPardonForm const &t);
-	void addActon() const;
+	void action() const;
 	std::string getTarget() const;
 	class NotValid : public std::exception
 	{

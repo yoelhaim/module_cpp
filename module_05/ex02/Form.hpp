@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:00 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/08 19:20:14 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 23:31:32 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,16 @@ public:
 	bool getSigned() const;
 	int getSignedGrade() const;
 	int getExecuteGrade() const;
-	virtual void addActon() const = 0;
+	virtual void action() const = 0;
 	void execute(Bureaucrat const &executor) const;
 	// nested class
 	class GradeTooHighException : public std::exception
 	{
+	private:
+		const char *msg;
+
 	public:
+		GradeTooHighException(const char *msg);
 		const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception

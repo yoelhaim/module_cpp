@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:25 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:19:55 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:11 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static std::string getAsciiTree()
 	return asci;
 }
 
-void ShrubberyCreationForm::addActon() const
+void ShrubberyCreationForm::action() const
 {
 	std::cout << "this is ShrubberyCreationForm" << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:28:30 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 19:18:57 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/09 22:30:12 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	ShrubberyCreationForm(ShrubberyCreationForm const &t);
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &t);
 
-	void addActon() const;
+	void action() const;
 	std::string getTarget() const;
 	class NotValid : public std::exception
 	{

@@ -1,5 +1,6 @@
-NAME = Form		
-HEADER = Bureaucrat.hpp Form.hpp \
+NAME = RobotomyRequestForm		
+HEADER = Bureaucrat.hpp \
+		Form.hpp \
 		ShrubberyCreationForm.hpp \
 		RobotomyRequestForm.hpp \
 		PresidentialPardonForm.hpp
