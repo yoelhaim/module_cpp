@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:32:22 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/10 01:32:21 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:25:45 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,10 @@ void Form::setSigned(bool sign)
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
 	std::string s = bureaucrat.getName() + " couldn’t sign " + getNameForm() + " because he has not permission.";
-	char *str = &s[0];
 	if (bureaucrat.getGrade() <= this->SignedGrade)
 		setSigned(true);
 	else
-		throw GradeTooHighException(str);
+		throw GradeTooHighException(&s[0]);
 }
 
 Form::GradeTooHighException::GradeTooHighException(const char *msg) : msg(msg)

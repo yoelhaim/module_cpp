@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 22:30:11 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:37:15 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ void RobotomyRequestForm::action() const
 
 const char *RobotomyRequestForm::NotValid::what() const throw()
 {
-	return "can't empty target.";
+	return "target can not be empty.";
 }

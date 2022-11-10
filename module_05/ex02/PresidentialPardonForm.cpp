@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:00 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 22:30:12 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:36:48 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ void PresidentialPardonForm::action() const
 
 const char *PresidentialPardonForm::NotValid::what() const throw()
 {
-	return "can't empty target.";
+	return "target can not be empty.";
 }

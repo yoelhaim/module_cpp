@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:25 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 22:30:12 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:46:29 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,15 @@ void ShrubberyCreationForm::action() const
 {
 	std::ofstream myfile;
 	myfile.open(this->getTarget() + "_shrubbery");
-	myfile << getAsciiTree();
-	myfile.close();
+	if (myfile.is_open())
+	{
+
+		myfile << getAsciiTree();
+		myfile.close();
+	}
 }
 
 const char *ShrubberyCreationForm::NotValid::what() const throw()
 {
-	return "can't empty target.";
+	return "target can not be empty.";
 }

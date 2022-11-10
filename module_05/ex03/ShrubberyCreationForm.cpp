@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:25 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 22:30:11 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:37:23 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ void ShrubberyCreationForm::action() const
 
 const char *ShrubberyCreationForm::NotValid::what() const throw()
 {
-	return "can't empty target.";
+	return "target can not be empty.";
 }

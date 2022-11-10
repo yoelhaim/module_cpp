@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 10:18:41 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/09 23:46:18 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:38:15 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 }
 const char *Bureaucrat::inValid::what() const throw()
 {
-	return ("can't empty name.");
+	return ("name can not be empty.");
 }
 
 void Bureaucrat::setGrade(int grade)
@@ -112,6 +112,5 @@ void Bureaucrat::executeForm(Form const &form)
 	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << '\n';
-		// std::cerr << "couldn’t executed " << form.getNameForm() << '\n';
 	}
 }

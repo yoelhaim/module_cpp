@@ -5,39 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 10:17:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/10 16:31:39 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/10 01:44:01 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/10 22:02:14 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-#include "Intern.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include <iostream>
 
-int main()
+ch
+void checkArg(std::string str)
 {
-	try
-	{
-		Intern someRandomIntern;
-		Form *rrf;
-		rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	std::cout << str << std::endl;
+}
 
-	try
-	{
-		Intern someRandomIntern;
-		Form *rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+int main(int ac, char **av)
+{
+	if (ac != 2)
+		return 0;
+	std::string str = av[1];
+	checkArg(str);
 }
