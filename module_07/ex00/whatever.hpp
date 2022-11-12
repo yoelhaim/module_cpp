@@ -6,14 +6,14 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:25:33 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 11:35:25 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:51:57 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-template <class T>
 
+template <class T>
 void swap(T &a, T &b)
 {
 	T tmp = a;
