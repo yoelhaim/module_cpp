@@ -3,12 +3,12 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 SRC = main.cpp
-OBJ= $(SRC:.c=.o)
+OBJ= $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ) Array.hpp
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c Array.hpp
+%.o: %.c Array.hpp Array.tpp
 	$(CC) $(CFLAGS) -c $< -o $@
 all : $(NAME)
 clean:

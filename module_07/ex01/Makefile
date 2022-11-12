@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 SRC = main.cpp
-OBJ= $(SRC:.c=.o)
+OBJ= $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ) iter.hpp
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
