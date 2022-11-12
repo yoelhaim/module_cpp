@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:52:32 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 13:09:52 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/12 13:24:57 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/12 13:46:50 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+template <typename T>
+class Array
 {
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &t);
-	FragTrap & operator=(const FragTrap &t);
-	~FragTrap();
-	void highFivesGuys(void);
-	void 	(const std::string &target);
-};
+private:
+	T *array;
+	unsigned int n;
 
+public:
+	Array();
+	Array(unsigned int n);
+};
+#include "Array.tpp"

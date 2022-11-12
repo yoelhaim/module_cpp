@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:44:01 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/11 20:23:58 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:33:06 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ void checkprintable(std::string str, std::string type, int number)
 	}
 	if (type == "char")
 	{
-
-		std::cout << "char: " << static_cast<char>(str[0]) << std::endl;
+		std::cout << "char: '" << static_cast<char>(str[0]) << "'" << std::endl;
 		std::cout << "int: " << static_cast<int>(str[0]) << std::endl;
 		std::cout << "flaot: " << static_cast<float>(str[0]) << "f" << std::endl;
 		std::cout << "double: " << static_cast<double>(str[0]) << std::endl;
@@ -87,17 +86,17 @@ void checkprintable(std::string str, std::string type, int number)
 	if ((num >= 0 && num < 32) || (num >= 127) || number < 0)
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: " << static_cast<char>(atoi(str.c_str())) << std::endl;
+		std::cout << "char: '" << static_cast<char>(atoi(str.c_str())) << "'" << std::endl;
 }
 
 void printValue(std::string str, std::string type)
 {
-	long long number = static_cast<int>(atoi(str.c_str()));
+	int number = static_cast<int>(atoi(str.c_str()));
 	checkprintable(str, type, number);
 
 	if (type != "char")
 	{
-		if (number < 0)
+		if (number == -1)
 			std::cout << "int: impossible" << std::endl;
 		else
 			std::cout << "int: " << static_cast<int>(atoi(str.c_str())) << std::endl;

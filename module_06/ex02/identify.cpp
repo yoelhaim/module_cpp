@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 20:42:14 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 01:29:13 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/12 01:36:29 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void Base::identify(Base *p)
 	A *a = dynamic_cast<A *>(p);
 	B *b = dynamic_cast<B *>(p);
 	C *c = dynamic_cast<C *>(p);
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
 	if (a)
 		std::cout << "Type is A\n";
 	if (b)

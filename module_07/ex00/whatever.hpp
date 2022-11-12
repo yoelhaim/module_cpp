@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:52:32 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 13:09:52 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/12 11:25:33 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/12 11:35:25 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include "ClapTrap.hpp"
+template <class T>
 
-class FragTrap : public ClapTrap
+void swap(T &a, T &b)
 {
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &t);
-	FragTrap & operator=(const FragTrap &t);
-	~FragTrap();
-	void highFivesGuys(void);
-	void 	(const std::string &target);
-};
+	T tmp = a;
+	a = b;
+	b = tmp;
+}
 
+template <class T>
+T min(T &a, T &b)
+{
+	return a < b ? a : b;
+}
+
+template <class T>
+T max(T &a, T &b)
+{
+	return a > b ? a : b;
+}

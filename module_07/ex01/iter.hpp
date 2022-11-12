@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:52:32 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 13:09:52 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/12 11:25:33 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/12 13:17:39 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+template <class T>
+void iter(T *array, size_t length, void (*f)(T const &))
 {
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &t);
-	FragTrap & operator=(const FragTrap &t);
-	~FragTrap();
-	void highFivesGuys(void);
-	void 	(const std::string &target);
-};
-
+	for (size_t i = 0; i < length; i++)
+		f(array[i]);
+}
