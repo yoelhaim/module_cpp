@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:44:01 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/11 18:11:12 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/11 20:23:58 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include <stdlib.h>
 #include <cmath>
-#include <limits.h>
+#include <iomanip>
 
 bool checkDouble(std::string str)
 {
@@ -84,7 +84,7 @@ void checkprintable(std::string str, std::string type, int number)
 		return;
 	}
 	int num = atoi(str.c_str());
-	if ((num >= 0 && num < 32) || (num >= 127) || number < 1)
+	if ((num >= 0 && num < 32) || (num >= 127) || number < 0)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: " << static_cast<char>(atoi(str.c_str())) << std::endl;
@@ -92,12 +92,12 @@ void checkprintable(std::string str, std::string type, int number)
 
 void printValue(std::string str, std::string type)
 {
-	int number = static_cast<int>(atoi(str.c_str()));
+	long long number = static_cast<int>(atoi(str.c_str()));
 	checkprintable(str, type, number);
 
 	if (type != "char")
 	{
-		if (number < 1)
+		if (number < 0)
 			std::cout << "int: impossible" << std::endl;
 		else
 			std::cout << "int: " << static_cast<int>(atoi(str.c_str())) << std::endl;
@@ -105,12 +105,14 @@ void printValue(std::string str, std::string type)
 		std::cout << "flaot: " << _isFloat;
 		!isinf(_isFloat) ? std::cout << "f" : std::cout << "f";
 		std::cout << std::endl;
-		std::cout << "double: " << strtod(str.c_str(), NULL) << std::endl;
+		std::cout << "double: " << strtod(str.c_str(), NULL);
 	}
 }
 
 void checkArg(std::string arg)
 {
+	std::cout << std::fixed;
+	std::cout.precision(1);
 	std::string str;
 	if (arg[0] == '+' || arg[0] == '-')
 		str = &arg[1];
