@@ -8,7 +8,7 @@ OBJ= $(SRC:.cpp=.o)
 $(NAME): $(OBJ) Array.hpp
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c Array.hpp Array.tpp
+%.o: %.c Array.hpp 
 	$(CC) $(CFLAGS) -c $< -o $@
 all : $(NAME)
 clean:

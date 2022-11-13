@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 11:25:33 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/13 11:57:22 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/13 23:04:36 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/13 23:12:54 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "Span.hpp"
 
-template <typename T>
-void iter(T *array, size_t length, void (*f)(T const &))
+Span::Span::Span()
 {
-	for (size_t i = 0; i < length; i++)
-		f(array[i]);
+}
+
+Span::Span::Span(unsigned int N)
+{
+	this->N = N;
+}
+
+Span::Span::~Span()
+{
 }

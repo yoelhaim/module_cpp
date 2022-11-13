@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 11:25:33 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/13 11:57:22 by yoelhaim         ###   ########.fr       */
+/*   Created: 2022/11/13 23:02:42 by yoelhaim          #+#    #+#             */
+/*   Updated: 2022/11/13 23:18:13 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <algorithm>
+#include <vector>
+#include <exception>
 
-template <typename T>
-void iter(T *array, size_t length, void (*f)(T const &))
+class Span
 {
-	for (size_t i = 0; i < length; i++)
-		f(array[i]);
-}
+private:
+	unsigned int N;
+
+public:
+	Span();
+	Span(unsigned int N);
+	~Span();
+	Span(Span const &t);
+	Span &operator=(Span const &t);
+	void addNumber(int n);
+	int shortestSpan();
+	int longestSpan();
+};
