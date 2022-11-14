@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:52:32 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 13:09:52 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/01 11:00:40 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ public:
 	FragTrap & operator=(const FragTrap &t);
 	~FragTrap();
 	void highFivesGuys(void);
-	void 	(const std::string &target);
+	void attack(const std::string &target);
 };
 

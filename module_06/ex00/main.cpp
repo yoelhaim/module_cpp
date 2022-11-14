@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:44:01 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/12 16:33:06 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:33:24 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,28 +83,34 @@ void checkprintable(std::string str, std::string type, int number)
 		return;
 	}
 	int num = atoi(str.c_str());
-	if ((num >= 0 && num < 32) || (num >= 127) || number < 0)
+	if ((num >= 0 && num < 32) || (num == 127) || number < 0)
 		std::cout << "char: Non displayable" << std::endl;
+	else if (num > 127 || num < 0)
+		std::cout << "char: impossible" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(atoi(str.c_str())) << "'" << std::endl;
 }
 
 void printValue(std::string str, std::string type)
 {
-	int number = static_cast<int>(atoi(str.c_str()));
+
+	double number = strtod(str.c_str(), NULL);
+
 	checkprintable(str, type, number);
 
 	if (type != "char")
 	{
-		if (number == -1)
+		if (str == "nan" || str == "-inff" || str == "inff" || str == "+inff" || str == "nanf" || str == "+inf" || str == "-inf" || str == "inf")
+			std::cout << "int: impossible" << std::endl;
+		else if (number < INT_MIN || number > INT_MAX)
 			std::cout << "int: impossible" << std::endl;
 		else
-			std::cout << "int: " << static_cast<int>(atoi(str.c_str())) << std::endl;
+			std::cout << "int: " << static_cast<int>(number) << std::endl;
 		float _isFloat = static_cast<double>(strtof(str.c_str(), NULL));
 		std::cout << "flaot: " << _isFloat;
 		!isinf(_isFloat) ? std::cout << "f" : std::cout << "f";
 		std::cout << std::endl;
-		std::cout << "double: " << strtod(str.c_str(), NULL);
+		std::cout << "double: " << strtod(str.c_str(), NULL) << std::endl;
 	}
 }
 
@@ -113,12 +119,12 @@ void checkArg(std::string arg)
 	std::cout << std::fixed;
 	std::cout.precision(1);
 	std::string str;
-	if (arg[0] == '+' || arg[0] == '-')
+	if ((arg[0] == '+' || arg[0] == '-') && (std::isdigit(arg[1])))
 		str = &arg[1];
 	else
 		str = arg;
 	std::string type = arg;
-	if (arg == "nan" || arg == "-inff" || arg == "+inff" || arg == "nanf" || arg == "+inf" || arg == "-inf")
+	if (arg == "nan" || arg == "-inff" || arg == "inff" || arg == "+inff" || arg == "nanf" || arg == "+inf" || arg == "-inf" || arg == "inf")
 	{
 		printValue(arg, type);
 		return;
@@ -149,7 +155,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cerr << "arg not valid ...use ===> [./convert 88.99f]\n";
+		std::cerr << "arg not valid ...\n";
 		return 0;
 	}
 
