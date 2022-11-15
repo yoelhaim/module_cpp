@@ -1,4 +1,4 @@
-NAME = easyfind
+NAME = MutantStack
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
@@ -6,7 +6,7 @@ SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-%.o : %.cpp easyfind.hpp
+%.o : %.cpp MutantStack.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 all: $(NAME)
 clean :
