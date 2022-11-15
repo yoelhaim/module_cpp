@@ -6,12 +6,13 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:28:04 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/14 16:51:51 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/15 20:07:03 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <array>
+#include <map>
 
 int main()
 {
@@ -39,10 +40,6 @@ int main()
 		{
 			arr2.push_back(i);
 		}
-		// std::cout << arr2.size() << std::endl;
-		// arr2.clear();
-		// std::cout << "Max Element = "
-		// 	  << *max_element(arr2.begin(), arr2.end()) << std::endl;
 		int res = easyfind(arr2, rand() % 150);
 		std::cout << "vector found : " << res << std::endl;
 	}

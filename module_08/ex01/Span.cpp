@@ -6,7 +6,7 @@
 /*   By: yoelhaim <yoelhaim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:04:36 by yoelhaim          #+#    #+#             */
-/*   Updated: 2022/11/15 12:54:13 by yoelhaim         ###   ########.fr       */
+/*   Updated: 2022/11/15 22:49:28 by yoelhaim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ Span::Span::~Span()
 
 Span::Span(Span const &t)
 {
-	std::cout << "copy constructor called ! \n";
 	*this = t;
 }
 Span &Span::operator=(Span const &t)
 {
-	std::cout << "copy assignment operator called! \n";
 	if (this != &t)
 	{
 		this->N = t.N;
@@ -55,7 +53,7 @@ int Span::shortestSpan()
 	std::vector<int> tmp = this->span;
 	std::sort(tmp.begin(), tmp.end());
 
-	std::vector<int>::iterator it;
+	std::vector<int>::iterator it = tmp.begin();
 
 	int temp = std::abs((*(it + 1)) - *it);
 
